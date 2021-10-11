@@ -2,8 +2,8 @@
 import pandas as pd
 
 # IMPORTING PACKAGES AND MODULES
-from utilities.perceptron_model import Perceptron
-from utilities.all_IMPfunctions import prepare_data, save_model, save_plot
+from utilities.Perceptron_class import Perceptron
+from utilities.all_ImpFunctions import prepare_data, save_model, save_plot
 
 # DATASET
 AND = {
@@ -27,6 +27,9 @@ model_AND.fit(x, y)
 # PREDICTIONS AND TOTAL LOSS
 model_AND.predict(x)
 model_AND.total_loss()
+
+# SAVE MODEL
+save_model(model_AND, 'AND.model')
 
 # SAVE PLOT
 save_plot(df, "AND.png", model_AND)

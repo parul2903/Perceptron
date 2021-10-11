@@ -2,8 +2,8 @@
 import pandas as pd
 
 # IMPORTING PACKAGES AND MODULES
-from utilities.perceptron_model import Perceptron
-from utilities.all_IMPfunctions import prepare_data, save_model, save_plot
+from utilities.Perceptron_class import Perceptron
+from utilities.all_ImpFunctions import prepare_data, save_model, save_plot
 
 # DATASET
 OR = {
@@ -28,5 +28,8 @@ model_OR.fit(x, y)
 model_OR.predict(x)
 model_OR.total_loss()
 
+# SAVE MODEL
+save_model(model_OR, 'OR.model')
+
 # SAVE PLOT
-save_plot(df1, "AND.png", model_OR)
+save_plot(df1, "OR.png", model_OR)

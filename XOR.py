@@ -2,8 +2,8 @@
 import pandas as pd
 
 # IMPORTING PACKAGES AND MODULES
-from utilities.perceptron_model import Perceptron
-from utilities.all_IMPfunctions import prepare_data, save_model, save_plot
+from utilities.Perceptron_class import Perceptron
+from utilities.all_ImpFunctions import prepare_data, save_model, save_plot
 
 # DATASET
 XOR = {
@@ -27,6 +27,9 @@ model_XOR.fit(x, y)
 # PREDICTIONS AND TOTAL LOSS
 model_XOR.predict(x)
 model_XOR.total_loss()
+
+# SAVE MODEL
+save_model(model_XOR, 'XOR.model')
 
 # SAVE PLOT
 save_plot(df2, "XOR.png", model_XOR)

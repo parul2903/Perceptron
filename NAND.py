@@ -2,8 +2,8 @@
 import pandas as pd
 
 # IMPORTING PACKAGES AND MODULES
-from utilities.perceptron_model import Perceptron
-from utilities.all_IMPfunctions import prepare_data, save_model, save_plot
+from utilities.Perceptron_class import Perceptron
+from utilities.all_ImpFunctions import prepare_data, save_model, save_plot
 
 # DATASET
 NAND = {
@@ -27,6 +27,9 @@ model_NAND.fit(x, y)
 # PREDICTIONS AND TOTAL LOSS
 model_NAND.predict(x)
 model_NAND.total_loss()
+
+# SAVE MODEL
+save_model(model_NAND, 'NAND.model')
 
 # SAVE PLOT
 save_plot(df3, "NAND.png", model_NAND)
