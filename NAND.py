@@ -6,31 +6,37 @@ from utilities.Perceptron_class import Perceptron
 from utilities.all_ImpFunctions import prepare_data, save_model, save_plot
 
 # DATASET
-NAND = {
+def main(data, eta, epochs, modelFilename, plotFilename):
+    
+    df = pd.DataFrame(data)
+    print(df)
+
+    # PREPARE DATA
+    x, y = prepare_data(df)
+
+    # FIT MODEL
+    model = Perceptron(ETA, EPOCHS)
+    model.fit(x, y)
+
+    # PREDICTIONS AND TOTAL LOSS
+    model.predict(x)
+    model.total_loss()
+
+    # SAVE MODEL
+    save_model(model, modelFilename)
+
+    # SAVE PLOT
+    save_plot(df, plotFilename, model)
+
+if __name__ == '__main__': # entry point from where the cide will start executing
+    NAND = {
     "x1": [0,0,1,1],
     "x2": [0,1,0,1],
     "y": [1,1,1,0],
 }
-df3 = pd.DataFrame(NAND)
-print(df3)
 
-# PREPARE DATA
-x, y = prepare_data(df3)
+    ETA = 0.3 # SHOULD BE BETWEEN 0 AND 1
+    EPOCHS = 10
 
-# FIT MODEL
-ETA = 0.3 # SHOULD BE BETWEEN 0 AND 1
-EPOCHS = 10
-
-model_NAND = Perceptron(ETA, EPOCHS)
-model_NAND.fit(x, y)
-
-# PREDICTIONS AND TOTAL LOSS
-model_NAND.predict(x)
-model_NAND.total_loss()
-
-# SAVE MODEL
-save_model(model_NAND, 'NAND.model')
-
-# SAVE PLOT
-save_plot(df3, "NAND.png", model_NAND)
+    main(data = NAND, eta = ETA, epochs = EPOCHS, modelFilename = 'NAND.model', plotFilename = 'NAND.png')
 
