@@ -1,4 +1,3 @@
-# IMPORT LIBRARIES
 # For docstrings, we cn use 2 methods. First is the one that we have shown below
 # second method:
 """
@@ -7,12 +6,15 @@ It is used to save the plot
 :param file_name: its a pth to save the plot
 :param model: trained model
 """
+
+# IMPORT LIBRARIES
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 import joblib
 import os
+import logging
 
 ##### (1) PREPARE DATA FUNCTION
 
@@ -25,6 +27,8 @@ def prepare_data(df):
   Returns:
       DataFrame: It returns the Data Frames of the independent and dependent variables
   """
+  logging.info("Preparing the model by segregating independent and dependent variables")
+
   x = df.drop('y', axis = 1)
   y = df['y']
 
@@ -42,6 +46,8 @@ def save_model(model, filename):
       model (python object): trained model
       filename (str): path to save the model
   """
+  logging.info("saving the trained model")
+
   model_dir = 'Models'
   os.makedirs(model_dir, exist_ok = True) 
 # We use exist_ok because if a directory with the same name is already present, then nothing will happen
@@ -51,6 +57,8 @@ def save_model(model, filename):
 # This os.path.join will create a path for our file according to our system
 
   joblib.dump(model, filePath)
+
+  logging.info(f"saved the trained model at {filePath}")
 
 ##### (3) SAVE PLOT FUNCTION
 
@@ -62,6 +70,7 @@ def save_plot(df, file_name, model):
       file_name (str): It is the path to save the plot
       model (python object): trained model
   """
+  logging.info(f"saving the plot")
 # we have used underscore while creating this function because we need to make sure this is protected 
 # and can only be used inside the function save_plot, although we can access it outside as well but we will not
   def _create_base_plot(df): # base plot of the model
@@ -70,6 +79,7 @@ def save_plot(df, file_name, model):
     Args:
         df (DataFrame): It is a Data Frame
     """
+    logging.info("creating the base plot")
     df.plot(kind = 'scatter', x = 'x1', y = 'x2', c = 'y', s = 100, cmap = 'winter') # s: size of data points
     plt.axhline(y = 0, color = 'black', linestyle = '--', linewidth = 1) # because y = 0 on the x-axis
     plt.axvline(x = 0, color = 'black', linestyle = '--', linewidth = 1) # because x = 0 on the y-axis
@@ -85,6 +95,7 @@ def save_plot(df, file_name, model):
         classfier (Python object): Trained model
         resolution (float, optional): . Defaults to 0.02.
     """
+    logging.info("plotting the decision boundary")
     colors = ['red', 'blue', 'lightgreen', 'cyan', 'grey']
     cmap = ListedColormap(colors[:len(np.unique(y))]) 
     # y is the classes that is 0 and 1 
@@ -122,3 +133,4 @@ def save_plot(df, file_name, model):
   os.makedirs(plot_dir, exist_ok = True) # ONLY CREATE IF MODEL_DIR DOESN"T EXISTS
   plotPath = os.path.join(plot_dir, file_name) # model/filename
   plt.savefig(plotPath)
+  logging.info(f"saved the plots at {plotPath}")
