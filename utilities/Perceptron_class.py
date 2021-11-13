@@ -5,12 +5,12 @@ class Perceptron:
   def __init__(self, eta, epochs):
     self.eta = eta # LEARNING RATE
     self.epochs = epochs
-    self.weights = np.random.randn(3) * 1e-4 # RANDOMLY INITIALIZING SMALL WEIGHTS
+    self.weights = np.random.randn(3) * 1e-4 # RANDOMLY INITIALIZING SMALL WEIGHTS # 1e-4=10^-4
     print(f"Initial weights before training: \n{self.weights}")
 
   def activationFunction(self, inputs, weights):
     z = np.dot(inputs, weights) # z = w0(-1) + w1x1 + w2x2
-    return np.where(z > 0, 1, 0) # CONDITION, IF TRUE, ELSE
+    return np.where(z > 0, 1, 0) # CONDITION, IF TRUE, ELSE # THRESHOLD VALUE  0
 
   def fit(self, x, y):
     self.x = x

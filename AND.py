@@ -29,7 +29,7 @@ def main(data, eta, epochs, modelFilename, plotFilename):
     # SAVE PLOT
     save_plot(df, plotFilename, model)
 
-if __name__ == '__main__': # entry point from where the cide will start executing
+if __name__ == '__main__': # entry point from where the code will start executing
     AND = {
         'x1' : [0, 0, 1, 1],
         'x2' : [0, 1, 0, 1],
