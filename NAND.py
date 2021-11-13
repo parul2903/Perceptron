@@ -28,7 +28,11 @@ def main(data, eta, epochs, modelFilename, plotFilename):
     # SAVE PLOT
     save_plot(df, plotFilename, model)
 
+<<<<<<< HEAD
 if __name__ == '__main__': # entry point from where the code will start executing
+=======
+if __name__ == '__main__': # entry point from where the cide will start executing
+>>>>>>> 2215ae3d33bd38374bb607616bfcff52e145e8ce
     NAND = {
     "x1": [0,0,1,1],
     "x2": [0,1,0,1],
