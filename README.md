@@ -24,22 +24,24 @@ git config --global user.email "parul3kin@gmail.com"
 ### URLs-
 [Git Handbook](https://guides.github.com/introduction/git-handbook/)
 
-### Images-
-![image for demo](Plots/OR.png)
-<img src="Plots/OR.png" alt="image for demo" width="500" height="600">
-
 ### Adding Python code
 ```python
 print("Adding Python code")
 ```
 
 ### Adding Table 
+#### Dataset for OR
 x1 | x2 | x3 
 -|-|-
 0|0|0
-0|1|0
-1|0|0
+0|1|1
+1|0|1
 1|1|1
+
+### Images-
+#### Plot for OR
+![image for demo](Plots/OR.png)
+<img src="Plots/OR.png" alt="image for demo" width="500" height="600">
 
 
 
