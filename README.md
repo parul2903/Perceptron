@@ -1,6 +1,6 @@
 # Perceptron
 
-### Adding Pointers
+### Important Points
 * The perceptron(or single-layer perceptron) is the simplest model of a neuron that illustrates how a neural network works.
 * It is an algorithm for supervised learning of binary classifiers.
 * Drawback: It can only work with linearly seperable data points.
@@ -25,8 +25,8 @@ git config --global user.email "parul3kin@gmail.com"
 [Git Handbook](https://guides.github.com/introduction/git-handbook/)
 
 ### Images-
-![image for demo](Perceptron/Plots/OR.png)
-<img src="Perceptron/Plots/OR.png" alt="image for demo" width="500" height="600">
+![image for demo](Plots/OR.png)
+<img src="Plots/OR.png" alt="image for demo" width="500" height="600">
 
 ### Adding Python code
 ```python
