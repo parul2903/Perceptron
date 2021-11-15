@@ -23,6 +23,7 @@ git config --global user.email "parul3kin@gmail.com"
 
 ### URLs-
 [Git Handbook](https://guides.github.com/introduction/git-handbook/)
+<a href = "https//:www.w3schools.com">Visit W3schools</a>
 
 ### Adding Python code
 ```python
